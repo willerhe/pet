@@ -6,10 +6,6 @@ Index.vue 主页
 
 Login.vue 登录页面
 
-personal
-
-Personal.vue 个人中心页面
-
 Register.vue 注册页面
 
 Store.vue 宠物日常用品商店页面
