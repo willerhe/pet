@@ -1,8 +1,52 @@
 <template>
-  <div class="s-footer">
-    <div>
-      123
+  <div>
+    <div class="s-footer">
+      <div class="sub-fo">
+        <p>企业动态</p>
+        <a href="javascript:;">品牌介绍</a>
+        <a href="javascript:;">新闻资讯</a>
+      </div>
+      <div>
+        <p>关于我们</p>
+        <a href="javascript:;">品牌故事</a>
+        <a href="javascript:;">医院点滴</a>
+        <a href="javascript:;">公益之路</a>
+      </div>
+      <div>
+        <p>联系我们</p>
+        <a href="javascript:;">企业总部</a>
+        <a href="javascript:;">门店展示</a>
+      </div>
+      <div>
+        <p>站点相关信息</p>
+        <a href="javascript:;">核心业务</a>
+        <a href="javascript:;">养宠俱乐部</a>
+      </div>
+      <div>
+        <i class="el-icon-phone-outline" style="font-size: 60px"></i>
+        <p style="font-size: large">4008-820088</p>
+      </div>
+
+      <div class="social">
+        <div>
+          <img src="@/assets/wechat.png" alt="" class="small-icon">
+          <span>
+            微信
+          </span>
+        </div>
+        <div>
+          <img src="@/assets/weibo.png" alt="" class="small-icon">
+          <span>微博</span>
+        </div>
+        <div>
+          <img src="@/assets/qq.png" alt="" class="small-icon">
+          <span>在线咨询</span>
+        </div>
+
+      </div>
     </div>
+
+
   </div>
 </template>
 
@@ -21,6 +65,32 @@
     height: 315px;
     background-color: #414b57;
     color: white;
-    padding: 40px 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0% 20%;
+  }
+
+  .s-footer > div {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: small;
+    padding: 3px;
+  }
+  .small-icon{
+    width: 35px;
+    height: 35px;
+  }
+  .social{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    line-height: 35px;
+    vertical-align: center;
   }
 </style>
