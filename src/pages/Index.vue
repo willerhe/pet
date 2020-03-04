@@ -1,12 +1,18 @@
 <template>
   <div>
-    主页
+    <Header/>
+    <Footer/>
   </div>
 </template>
 
 <script>
+
+  import Header from "../components/Header";
+  import Footer from "../components/Footer";
+
   export default {
-    name: "Index"
+    name: "Index",
+    components: {Footer, Header}
   }
 </script>
 
