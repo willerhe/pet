@@ -10,7 +10,7 @@
      active-text-color="#ABCD04">
 
      <el-menu-item>
-       <img src="@/assets/logo_small.png" alt="">
+       <img src="@/assets/logo_small.png" alt="" style="width: 50px;padding: 3px;border-radius: 15px">
        <span style="font-weight: bolder;font-size: large;letter-spacing: 3px">派特宠物</span>
      </el-menu-item>
      <el-menu-item index="1"><a href="/">首页</a></el-menu-item>
