@@ -1,6 +1,7 @@
 <template>
   <div class="page1">
     <Header/>
+    <LeaveWord  style="z-index: 100000"/>
     <div class="content" style="min-height: 100vh;display: flex;justify-content: center;align-items: center">
       <video class="banner-video" autoplay loop muted poster="">
         <source src="@/assets/homepage.mp4" type="video/mp4">
@@ -99,10 +100,11 @@
 
   import Header from "../components/Header";
   import Footer from "../components/Footer";
+  import LeaveWord from "../components/LeaveWord";
 
   export default {
     name: "Index",
-    components: {Footer, Header},
+    components: {LeaveWord, Footer, Header},
     data() {
       return {
         numbers: [1300, 15000, 50, 600, 15, 1200]
