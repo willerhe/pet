@@ -9,6 +9,8 @@ import Article from "../pages/Article";
 import MyAppointment from "../pages/personal/MyAppointment";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import MyPets from "../pages/personal/MyPets";
+import MyInformation from "../pages/personal/MyInformation";
 
 Vue.use(Router)
 
@@ -59,6 +61,16 @@ export default new Router({
       path: '/register',
       name: "register",
       component: Register
+    },
+    {
+      path: '/my-pets',
+      name: "MyPets",
+      component: MyPets
+    },
+    {
+      path: '/my-info',
+      name: "MyInfo",
+      component: MyInformation
     }
   ]
 })

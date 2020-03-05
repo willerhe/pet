@@ -3,6 +3,7 @@
     <Header/>
     <div class="content" style="display: flex;justify-content: center;align-items: start;background-color: #EFEFEF;padding: 50px">
       <div style="width: 60%;padding: 50px">
+        <h1 style="color: #ABCD04" align="center">我的预约</h1>
         <el-table
           :data="tableData"
           border
