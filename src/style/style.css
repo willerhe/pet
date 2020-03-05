@@ -6,3 +6,9 @@ body{
 .mr-5{
   margin-top: 5px;
 }
+.content{
+  min-height: 70vh;
+}
+.mt-10{
+  margin-top: 10px;
+}

@@ -5,6 +5,7 @@ import Blank from "../components/Blank";
 import About from "../pages/About";
 import Appointment from "../pages/Appointment";
 import Store from "../pages/Store";
+import Article from "../pages/Article";
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/store',
       name: "Store",
       component: Store
+    },
+    {
+      path: '/article',
+      name: "Article",
+      component: Article
     }
   ]
 })

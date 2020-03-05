@@ -1,95 +1,79 @@
 <template>
-  <div class="page1">
+  <div>
     <Header/>
-    <LeaveWord  style="z-index: 100000"/>
-    <div class="content" style="min-height: 100vh;display: flex;justify-content: center;align-items: center">
-      <video class="banner-video" autoplay loop muted poster="">
-        <source src="@/assets/homepage.mp4" type="video/mp4">
-      </video>
-      <div>
-        <div style="display: flex;justify-content: center;align-items: center">
-          <img src="@/assets/logo.png" alt="" style="width: 120px;border-radius: 40px">
-          <p style="margin-left: 10px;letter-spacing: 3px;font-size: 38px;font-weight: bolder">派特医疗,连接生活</p>
+    <div class="content">
+      <div style="margin-top: 100px">
+        <p style="font-size: 45px;color: #ABCD04;margin: 0px" align="center">汪星人课堂</p>
+        <p align=center style="font-size: 25px;color: #ABCD04;margin: 0px">DOG ENCYCLOPEDIA</p>
+
+        <div class="jibing-list">
+          <ul>
+            <li>疫苗</li>
+            <li>呕吐</li>
+            <li>驱虫</li>
+            <li>掉毛</li>
+            <li>寄生虫</li>
+            <li>拉稀</li>
+            <li>发抖</li>
+            <li>犬瘟</li>
+            <li>肿瘤</li>
+            <li>细小</li>
+            <li>打喷嚏</li>
+            <li>咳嗽</li>
+            <li>白内障</li>
+            <li>腿瘸</li>
+            <li>皮肤痒</li>
+            <li>拉虫</li>
+            <li>抽搐</li>
+            <li>流鼻涕</li>
+            <li>手术</li>
+            <li>骨折</li>
+          </ul>
+
         </div>
-        <p class="wt" align="center" style="font-size: 28px;font-weight: bolder;">派特宠物医疗集团是一家
-          以宠物医疗服务为主营的大型综合性企业集团</p>
-        <p class="wt" style="font-size: 18px;font-weight: normal" align="center">业务涵盖：宠物医疗保健、实验室诊断、宠物美容造型、
-          宠物商品贸易、宠物供应链、宠物<br>医院、远程互联网诊断、医疗信息化建设、兽医继续教育、宠物美容学校<br>
-          宠物文化传播等，覆盖宠物产业链的主要环节！</p>
-      </div>
+        <div style="margin: 30px 12%">
 
+          <div class="prase" @click="toArticleDetail">
+            <img src="@/assets/pt.jpg" alt="" style="width: 280px;height: 200px">
+            <a style="margin-top: 30px">给狗狗打疫苗是必须的吗？狗</a>
+            <p style="color: #5F5f5f;font-size: 12px;margin-top: 5px">2019-06-10</p>
+            <p class="mt-10" style="color: #5F5f5f;font-size: 14px;margin-top: 5px">
+              狗狗是不是打了疫苗更健康啊，还有给狗狗打疫苗时需要注意些什么呢...</p>
+          </div>
 
-    </div>
-    <div class="grid-group">
-      <div name="grid" class="bg1">
-        <div>
-          <p align="center" style="font-size: 24px;color: #5E6360">
-          <span style="color: #5E6360;font-size: 100px;margin-right: -30px;margin-bottom: -30px">
-         1200
-        </span> +家</p>
-          <p align="center" style="font-size: 22px;color: #5E6360">全球分院</p>
-          <p align="center" style="font-size: 12px;color: #5E6360">GLOBAL BRANCH</p>
-        </div>
-      </div>
-      <div class="bg2">
-
-        <div>
-          <p align="center" style="font-size: 24px;color: #5E6360">
-          <span style="color: #5E6360;font-size: 100px;margin-right: -30px;margin-bottom: -30px">
-         15000
-        </span> +名</p>
-          <p align="center" style="font-size: 22px;color: #5E6360">员工总数</p>
-          <p align="center" style="font-size: 12px;color: #5E6360">TOTAL EMPLOYEES</p>
-        </div>
-
-      </div>
-      <div class="bg3">
-        <div>
-          <p align="center" style="font-size: 24px;color: #5E6360">
-            <span style="color: #5E6360;font-size: 100px;margin-right: -30px;margin-bottom: -30px">50</span></p>
-          <p align="center" style="font-size: 22px;color: #5E6360">覆盖城市</p>
-          <p align="center" style="font-size: 12px;color: #5E6360">COVERING CITIES</p>
         </div>
 
       </div>
-      <div class="bg4">
 
+      <img src="@/assets/div.png" alt="" style="max-height: 150px;width: 100%">
 
-        <div>
-          <p align="center" style="font-size: 24px;color: #5E6360">
-            年
-            <span style="color: #5E6360;font-size: 100px;margin-right: -30px;margin-bottom: -30px">
-         600
-        </span>&nbsp;万</p>
-          <p align="center" style="font-size: 22px;color: #5E6360">诊逾病例</p>
-          <p align="center" style="font-size: 12px;color: #5E6360">PRACTICING VETERINGARIAN</p>
+      <div style="margin-top: 100px">
+        <p style="font-size: 45px;color: #ABCD04;margin: 0px" align="center">喵星人课堂</p>
+        <p align=center style="font-size: 25px;color: #ABCD04;margin: 0px">CAT ENCYCLOPEDIA</p>
+        <div class="jibing-list">
+          <ul>
+            <li>疫苗</li>
+            <li>呕吐</li>
+            <li>驱虫</li>
+            <li>掉毛</li>
+            <li>寄生虫</li>
+            <li>拉稀</li>
+            <li>发抖</li>
+            <li>犬瘟</li>
+            <li>肿瘤</li>
+            <li>细小</li>
+            <li>打喷嚏</li>
+            <li>咳嗽</li>
+            <li>白内障</li>
+            <li>腿瘸</li>
+            <li>皮肤痒</li>
+            <li>拉虫</li>
+            <li>抽搐</li>
+            <li>流鼻涕</li>
+            <li>手术</li>
+            <li>骨折</li>
+          </ul>
         </div>
-
-      </div>
-      <div class="bg5">
-
-
-        <div>
-          <p align="center" style="font-size: 24px;color: #5E6360">
-            设
-            <span style="color: #5E6360;font-size: 100px;margin-right: -30px;margin-bottom: -30px">
-         15
-        </span>&nbsp;大</p>
-          <p align="center" style="font-size: 22px;color: #5E6360">宠物专科</p>
-          <p align="center" style="font-size: 12px;color: #5E6360">PET SPECIALIST</p>
-        </div>
-
-      </div>
-      <div class="bg6">
-        <div>
-          <p align="center" style="font-size: 24px;color: #5E6360">
-            <span style="color: #5E6360;font-size: 100px;margin-right: -30px;margin-bottom: -30px">
-         1200
-        </span>&nbsp;名</p>
-          <p align="center" style="font-size: 22px;color: #5E6360">职业兽医</p>
-          <p align="center" style="font-size: 12px;color: #5E6360">DIAGNOSIS EACH YEAR</p>
-        </div>
-
       </div>
     </div>
     <Footer/>
@@ -97,115 +81,88 @@
 </template>
 
 <script>
-
   import Header from "../components/Header";
   import Footer from "../components/Footer";
-  import LeaveWord from "../components/LeaveWord";
 
   export default {
     name: "Index",
-    components: {LeaveWord, Footer, Header},
-    data() {
-      return {
-        numbers: [1300, 15000, 50, 600, 15, 1200]
+    components: {Footer, Header},
+    methods: {
+      toArticleDetail() {
+        console.log('进入文章详情页面')
+        this.$router.push('/article?articleId=' + '10001')
       }
-    },
-    mounted() {
-      // /*1.拿到div元素对象*/
-      // var elems = document.getElementsByName('grid');
-      // /*2.监听window的滚动*/
-      // window.addEventListener('scroll', () => {
-      //   const rect = elems[0].getBoundingClientRect();
-      //   /*3.通过rect的属性判断该元素是否在窗口中*/
-      //   const inViewport = rect.bottom > 0 && rect.right > 0 &&
-      //     rect.left < window.innerWidth &&
-      //     rect.top < window.innerHeight;
-      //   console.log(elems[0].innerText, inViewport);
-      //   /*4.如果div出现在窗口（div可见）添加css动画*/
-      //   if (inViewport) {
-      //     elems[0].style.transform = 'scale(1.1, 1.1)'
-      //     elems[0].style.transition = 'transform 1s linear'
-      //   } else {
-      //     elems[0].style = ''
-      //   }
-      // });
     }
-
   }
 </script>
 
 <style scoped>
-  .banner-video {
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    /*background: url(../images/homepage.jpg) no-repeat;*/
-    background-size: cover;
+  .jibing-list {
+    width: 80%;
+    margin: 30px auto;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 100px;
   }
 
-  .page1 {
-    background-color: rgba(0, 104, 183, 0.2);
-    z-index: 10;
+  .jibing-list1 {
+    width: 72%;
+    margin: 30px auto;
   }
 
-  .wt {
-    color: white;
+  .jibing-list ul li {
+    display: block;
+    float: left;
+    padding-left: 33px;
   }
 
-
-  .grid-group {
-    display: flex;
-    flex-flow: wrap;
-    width: 100vw;
+  .text {
+    font-size: 14px;
   }
 
-  .grid-group > div {
-    width: 33.3%;
-    height: 50vh;
-    background-size: cover;
-    min-height: 100%;
-    max-font-size: 100%;
-    z-index: 999;
+  .prase {
+    width: 280px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    flex-direction: column;
   }
 
-  .bg1 {
-    background: url("../assets/index-bg1.png") no-repeat no-repeat;
+  .prase > p {
+    margin: 0;
   }
 
-  .bg2 {
-    background: url("../assets/index-bg2.png") no-repeat no-repeat;
+  .prase > a {
+    cursor: pointer;
+    color: #555555;
+    font-size: 20px;
   }
 
-  .bg3 {
-    background: url("../assets/index-bg3.png") no-repeat no-repeat;
+
+  .prase > a:hover {
+    text-decoration: underline;
   }
 
-  .bg4 {
-    background: url("../assets/index-bg4.png") no-repeat no-repeat;
+
+  .item {
+    margin-bottom: 18px;
   }
 
-  .bg5 {
-    background: url("../assets/index-bg5.png") no-repeat no-repeat;
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
   }
 
-  .bg6 {
-    background: url("../assets/index-bg6.png") no-repeat no-repeat;
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 300px;
   }
 
   p {
-    margin: 10px;
+    word-wrap: break-word;
   }
-
-
 </style>
