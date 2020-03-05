@@ -23,7 +23,7 @@
          <span style="margin-left: 5px">400 8088 2088</span>
        </div>
      </el-menu-item>
-     <el-menu-item ><el-button plain style="background-color: #0f1925;color: white">登录/注册</el-button></el-menu-item>
+     <el-menu-item ><el-button plain style="background-color: #0f1925;color: white" @click="toLogin">登录/注册</el-button></el-menu-item>
    </el-menu>
  </div>
 
@@ -42,6 +42,9 @@
     methods: {
       tips(){
         alert('已复制到粘贴板')
+      },
+      toLogin(){
+        this.$router.push('/login')
       },
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
