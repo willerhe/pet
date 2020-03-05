@@ -31,7 +31,7 @@
           </ul>
 
         </div>
-        <div style="margin: 30px 12%">
+        <div style="margin: 30px 15%">
 
           <div class="prase" @click="toArticleDetail">
             <img src="@/assets/pt.jpg" alt="" style="width: 280px;height: 200px">
@@ -74,6 +74,22 @@
             <li>骨折</li>
           </ul>
         </div>
+
+
+
+        <div style="margin: 30px 15%">
+
+          <div class="prase" @click="toArticleDetail">
+            <img src="@/assets/pt2.jpg" alt="" style="width: 280px;height: 200px">
+            <a style="margin-top: 30px">接种疫苗前、后都需要注意</a>
+            <p style="color: #5F5f5f;font-size: 12px;margin-top: 5px">2019-06-10</p>
+            <p class="mt-10" style="color: #5F5f5f;font-size: 14px;margin-top: 5px">
+              宠物要在精神状态良好，排便饮食正常，不打喷嚏，不流鼻涕，体温正常...</p>
+          </div>
+
+        </div>
+
+
       </div>
     </div>
     <Footer/>
