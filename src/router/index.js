@@ -11,6 +11,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import MyPets from "../pages/personal/MyPets";
 import MyInformation from "../pages/personal/MyInformation";
+import Admin from "../components/Admin";
+import Dashboard from "../pages/admin/Dashboard";
 
 Vue.use(Router)
 
@@ -71,6 +73,19 @@ export default new Router({
       path: '/my-info',
       name: "MyInfo",
       component: MyInformation
+    },
+    {
+      path: '/admin',
+      name: "Admin",
+      component: Admin,
+      redirect:'/admin/dashboard',
+      children:[
+        {
+          path: 'dashboard',
+          name: "Dashboard",
+          component: Dashboard,
+        }
+      ]
     }
   ]
 })
