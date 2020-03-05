@@ -10,7 +10,7 @@
                   <span>精品狗粮进口500g全国门店有售</span>
                   <div class="bottom clearfix">
                     <span style="color: red">￥ 188元</span>
-                    <el-button type="text" class="button" @click="toDetail">查看详情</el-button>
+                    <el-button type="text" class="button" @click="toDetail">-</el-button>
                   </div>
                 </div>
               </el-card>

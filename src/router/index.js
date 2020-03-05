@@ -6,6 +6,7 @@ import About from "../pages/About";
 import Appointment from "../pages/Appointment";
 import Store from "../pages/Store";
 import Article from "../pages/Article";
+import MyAppointment from "../pages/personal/MyAppointment";
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/appointment',
       name: "Appointment",
       component: Appointment
+    },
+    {
+      path: '/my-appointment',
+      name: "MyAppointment",
+      component: MyAppointment
     },
     {
       path: '/store',

@@ -1,12 +1,19 @@
 <template>
 <div>
-  个人资料管理
+  <Header/>
+  <div class="content">
+
+  </div>
+  <Footer />
 </div>
 </template>
 
 <script>
+    import Header from "../../components/Header";
+    import Footer from "../../components/Footer";
     export default {
-        name: "Personal"
+        name: "Personal",
+      components: {Footer, Header}
     }
 </script>
 
