@@ -16,8 +16,8 @@
      <el-menu-item index="1"><a href="/">首页</a></el-menu-item>
      <el-menu-item index="2">养宠CLUB</el-menu-item>
      <el-menu-item index="4"><a href="#/about">关于我们</a></el-menu-item>
-     <el-menu-item index="5">预约挂号</el-menu-item>
-     <el-menu-item index="6">宠物商城</el-menu-item>
+     <el-menu-item index="5"><a href="#/appointment">预约挂号</a></el-menu-item>
+     <el-menu-item index="6"><a href="#/store">宠物商城</a></el-menu-item>
      <el-menu-item >
        <div @click="tips">
          <i class="el-icon-phone"></i>
