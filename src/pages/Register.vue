@@ -145,7 +145,12 @@
     methods:{
       doRegister(){
         console.log('当前的用户', this.user)
-        API.register()
+        API.register(this.user).then(res=>{
+          if(res.data.ok){
+            this.$message.success('注册成功,请登录')
+            this.$router.push('/login')
+          }
+        })
 
       },
       toLogin(){

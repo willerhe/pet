@@ -23,7 +23,15 @@
          <span style="margin-left: 5px">400 8088 2088</span>
        </div>
      </el-menu-item>
-     <el-menu-item ><el-button plain style="background-color: #0f1925;color: white" @click="toLogin">登录/注册</el-button></el-menu-item>
+     <el-menu-item v-if="!isLogin"><el-button plain style="background-color: #0f1925;color: white" @click="toLogin">登录/注册</el-button></el-menu-item>
+     <el-menu-item v-else>
+
+       <el-button plain style="background-color: #0f1925;color: white">个人中心</el-button>
+
+       <el-button plain style="background-color: #0f1925;color: white" @click="logout">退出</el-button>
+
+
+     </el-menu-item>
    </el-menu>
  </div>
 
@@ -35,6 +43,7 @@
     name: 'Header',
     data() {
       return {
+        isLogin:false,
         activeIndex: '1',
         activeIndex2: '1'
       };
@@ -48,6 +57,19 @@
       },
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      },
+      logout(){
+        window.localStorage.clear()
+        this.$router.push('/')
+        location.reload();
+      }
+    },
+    mounted() {
+      let user = window.localStorage.getItem('user')
+      if (user){
+        this.isLogin = true
+      }else{
+        this.isLogin = false
       }
     }
   }

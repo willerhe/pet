@@ -1,6 +1,6 @@
 <template>
   <div class="page1">
-    <Header/>
+    <Header />
     <LeaveWord style="z-index: 100000"/>
     <div class="content" style="min-height: 100vh;display: flex;justify-content: center;align-items: center">
       <video class="banner-video" autoplay loop muted poster="">
@@ -12,20 +12,26 @@
           <p style="margin-left: 10px;letter-spacing: 3px;font-size: 38px;font-weight: bolder">派特医疗,连接生活</p>
         </div>
 
-        <div style="display: flex;justify-content: center;flex-direction: column;">
+        <div style="display: flex;justify-content: center;flex-direction: column;" v-if="!isLogin">
           <el-input
             placeholder="请输入账号"
             class="mt-10"
+            v-model="user.account"
             prefix-icon="el-icon-search">
           </el-input>
           <el-input
             placeholder="请输入密码" class="mt-10"
+            v-model="user.password"
             prefix-icon="el-icon-search">
           </el-input>
-          <el-button type="success" class="mt-10">登录</el-button>
+          <el-button type="success" class="mt-10" @click="toLogin">登录</el-button>
           <div style="display: flex;justify-content: end;flex-direction: row">
-            <a href="javascript:;" @click="toRegister" style="color: white;text-decoration: none;" class="mt-10"> 没有账户？ 去创建</a>
+            <a href="javascript:;" @click="toRegister" style="color: white;text-decoration: none;" class="mt-10"> 没有账户？
+              去创建</a>
           </div>
+        </div>
+        <div v-else>
+          <p style="color: white;font-size: 20px;letter-spacing: 10px;" align="center">已登录</p>
         </div>
       </div>
 
@@ -112,39 +118,41 @@
   import Header from "../components/Header";
   import Footer from "../components/Footer";
   import LeaveWord from "../components/LeaveWord";
+  import API from '@/api/api'
 
   export default {
     name: "Index",
     components: {LeaveWord, Footer, Header},
     data() {
       return {
-        numbers: [1300, 15000, 50, 600, 15, 1200]
+        isLogin:false,
+        numbers: [1300, 15000, 50, 600, 15, 1200],
+        user: {}
       }
     },
-    methods:{
-      toRegister(){
+    methods: {
+      toLogin() {
+        API.login(this.user).then(res => {
+          if (res.data.ok) {
+            this.$message.success('登录成功')
+            window.localStorage.setItem('user', res.data.data)
+            location.reload();
+            this.$router.push('/')
+          }
+        })
+      },
+      toRegister() {
         this.$router.push('/register')
       }
     },
     mounted() {
-      // /*1.拿到div元素对象*/
-      // var elems = document.getElementsByName('grid');
-      // /*2.监听window的滚动*/
-      // window.addEventListener('scroll', () => {
-      //   const rect = elems[0].getBoundingClientRect();
-      //   /*3.通过rect的属性判断该元素是否在窗口中*/
-      //   const inViewport = rect.bottom > 0 && rect.right > 0 &&
-      //     rect.left < window.innerWidth &&
-      //     rect.top < window.innerHeight;
-      //   console.log(elems[0].innerText, inViewport);
-      //   /*4.如果div出现在窗口（div可见）添加css动画*/
-      //   if (inViewport) {
-      //     elems[0].style.transform = 'scale(1.1, 1.1)'
-      //     elems[0].style.transition = 'transform 1s linear'
-      //   } else {
-      //     elems[0].style = ''
-      //   }
-      // });
+
+      let user = window.localStorage.getItem('user')
+      if (user){
+        this.isLogin = true
+      }else{
+        this.isLogin = false
+      }
     }
 
   }

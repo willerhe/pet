@@ -16,11 +16,11 @@ let api = {
 }
 
 api.login = function (obj) {
-  return api.post('/login', obj)
+  return http.post('/login', obj)
 }
 
 api.register = function (obj) {
-  return api.post('/register', obj)
+  return http.post('/register', obj)
 }
 
 
