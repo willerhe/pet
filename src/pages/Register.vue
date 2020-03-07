@@ -16,27 +16,32 @@
           <el-input
             placeholder="请输入账号"
             class="mt-10"
+            v-model="user.account"
             prefix-icon="el-icon-search">
           </el-input>
 
           <el-input
             placeholder="请输入密码" class="mt-10"
+            v-model="user.password"
             prefix-icon="el-icon-search">
           </el-input>
 
           <el-input
             placeholder="请再次输入密码" class="mt-10"
+            v-model="user.password1"
             prefix-icon="el-icon-search">
           </el-input>
           <el-input
             placeholder="请输入手机号" class="mt-10"
+            v-model="user.phoneNumber"
             prefix-icon="el-icon-search">
           </el-input>
           <el-input
             placeholder="请输入所在地址" class="mt-10"
+            v-model="user.address"
             prefix-icon="el-icon-search">
           </el-input>
-          <el-button type="success" class="mt-10">立即注册</el-button>
+          <el-button type="success" class="mt-10" @click="doRegister">立即注册</el-button>
           <div style="display: flex;justify-content: end;flex-direction: row">
             <a href="javascript:;" @click="toLogin" style="color: white;text-decoration: none;" class="mt-10"> 已有账户？去登录</a>
           </div>
@@ -126,16 +131,23 @@
   import Header from "../components/Header";
   import Footer from "../components/Footer";
   import LeaveWord from "../components/LeaveWord";
+  import API from '@/api/api'
 
   export default {
     name: "Register",
     components: {LeaveWord, Footer, Header},
     data() {
       return {
+        user:{},
         numbers: [1300, 15000, 50, 600, 15, 1200]
       }
     },
     methods:{
+      doRegister(){
+        console.log('当前的用户', this.user)
+        API.register()
+
+      },
       toLogin(){
         this.$router.push('/login')
       }

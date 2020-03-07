@@ -1,5 +1,10 @@
 import axios from 'axios'
 
+const http = axios.create({
+  baseURL: process.env.baseURI,
+  withCredentials: true,
+})
+
 let api = {
   appointment: QuickParse('appointment', 'appointments'),
   fee: QuickParse('fee', 'fees'),
@@ -11,11 +16,11 @@ let api = {
 }
 
 api.login = function (obj) {
-  return http.post('/login', obj)
+  return api.post('/login', obj)
 }
 
 api.register = function (obj) {
-  return http.post('/register', obj)
+  return api.post('/register', obj)
 }
 
 
@@ -40,8 +45,3 @@ function QuickParse(odd, plural) {
     }
   }
 }
-
-const http = axios.create({
-  baseURL: process.env.baseURI,
-  withCredentials: true,
-})
