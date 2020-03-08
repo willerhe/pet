@@ -22,6 +22,7 @@ import FeeManager from "../pages/admin/FeeManager";
 import BalanceManager from "../pages/admin/BalanceManager";
 import MedicalManager from "../pages/admin/MedicalManager";
 import RoleManager from "../pages/admin/RoleManager";
+import AppointmentManager from "../pages/admin/AppointmentManager";
 
 Vue.use(Router)
 
@@ -138,6 +139,11 @@ export default new Router({
           path: 'role',
           name: "role",
           component: RoleManager,
+        },
+        {
+          path: 'appointment',
+          name: "appointment",
+          component: AppointmentManager,
         },
       ]
     }

@@ -46,10 +46,10 @@
           <span slot="title"><a href="#/admin/fee">门诊费用管理</a></span>
         </el-menu-item>
 
-        <el-menu-item index="7">
-          <i class="el-icon-menu"></i>
-          <span slot="title"><a href="#/admin/balance">余额查询</a></span>
-        </el-menu-item>
+<!--        <el-menu-item index="7">-->
+<!--          <i class="el-icon-menu"></i>-->
+<!--          <span slot="title"><a href="#/admin/balance">余额查询</a></span>-->
+<!--        </el-menu-item>-->
 
         <el-menu-item index="8">
           <i class="el-icon-menu"></i>
