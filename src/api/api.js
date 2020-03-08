@@ -31,8 +31,8 @@ function QuickParse(odd, plural) {
     list: function (params) {
       return http.get(plural, {params: params})
     },
-    delete: function (id) {
-      return http.delete(odd + '/' + id)
+    delete: function (param) {
+      return http.delete(odd , {params:param})
     },
     get: function (id) {
       return http.get(odd + '/' + id)

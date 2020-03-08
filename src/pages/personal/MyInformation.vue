@@ -4,15 +4,7 @@
     <div class="content"  style="background-color: #EFEFEF;display: flex;justify-content: center">
       <div style="background-color: white;margin: 30px;padding: 30px;width: 50%">
         <el-form ref="form" :model="form" label-width="80px" style="width: 100%">
-          <h1 style="color: #ABCD04" align="center">在线预约</h1>
-
-          <el-form-item label="情况描述">
-            <el-input
-              type="textarea"
-              :rows="6"
-              placeholder="请输入内容">
-            </el-input>
-          </el-form-item>
+          <h1 style="color: #ABCD04" align="center">个人中心</h1>
 
           <el-form-item label="手机号">
             <el-input v-model="form.name"></el-input>
@@ -53,7 +45,7 @@
 
           <el-form-item>
             <el-button type="success" @click="onSubmit">立即预约</el-button>
-            <el-button @click="back">取消</el-button>
+            <el-button @click="back">返回</el-button>
           </el-form-item>
         </el-form>
       </div>

@@ -135,7 +135,7 @@
         API.login(this.user).then(res => {
           if (res.data.ok) {
             this.$message.success('登录成功')
-            window.localStorage.setItem('user', res.data.data)
+            window.localStorage.setItem('user', JSON.stringify(res.data.data.data))
             location.reload();
             this.$router.push('/')
           }

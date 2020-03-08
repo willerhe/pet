@@ -13,6 +13,7 @@ import MyPets from "../pages/personal/MyPets";
 import MyInformation from "../pages/personal/MyInformation";
 import Admin from "../components/Admin";
 import Dashboard from "../pages/admin/Dashboard";
+import MySpace from "../pages/personal/MySpace";
 
 Vue.use(Router)
 
@@ -73,6 +74,11 @@ export default new Router({
       path: '/my-info',
       name: "MyInfo",
       component: MyInformation
+    },
+    {
+      path: '/my-space',
+      name: "MySpace",
+      component: MySpace
     },
     {
       path: '/admin',

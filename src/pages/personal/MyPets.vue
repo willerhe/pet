@@ -3,11 +3,11 @@
     <Header/>
     <div class="content" style="display: flex;justify-content: center;align-items: start;background-color: #EFEFEF;padding: 50px">
       <h1 style="color: #ABCD04" align="center">我的宠物</h1>
-      <div style="width: 60%;padding: 50px">
+      <div style="width: 60%;margin: 50px">
         <el-table
           :data="tableData"
           border
-          style="width: 100%">
+          style="width: 100%;margin-top: 30px">
           <el-table-column
             prop="date"
             label="预约时间"
