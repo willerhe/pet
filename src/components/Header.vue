@@ -27,6 +27,7 @@
      <el-menu-item v-else>
 
        <el-button plain style="background-color: #0f1925;color: white" @click="mySpace">个人中心</el-button>
+       <el-button plain style="background-color: #0f1925;color: white" @click="toAdmin" v-if="">管理后台</el-button>
 
        <el-button plain style="background-color: #0f1925;color: white" @click="logout">退出</el-button>
 
@@ -45,10 +46,14 @@
       return {
         isLogin:false,
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',
+        isAdmin:false
       };
     },
     methods: {
+      toAdmin(){
+        this.$router.push('/admin')
+      },
       mySpace(){
         this.$router.push('/my-space')
       },
@@ -70,6 +75,10 @@
     mounted() {
       let user = window.localStorage.getItem('user')
       if (user){
+        if(user.indexOf('admin') > -1){
+          this.isAdmin = true
+          debugger
+        }
         this.isLogin = true
       }else{
         this.isLogin = false

@@ -18,47 +18,47 @@
 
         <el-menu-item index="1">
           <i class="el-icon-menu"></i>
-          <span slot="title">宠物信息管理</span>
+          <span slot="title"><a href="#/admin/pet">宠物信息管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="2">
           <i class="el-icon-menu"></i>
-          <span slot="title">员工信息管理</span>
+          <span slot="title"><a href="#/admin/enp">员工信息管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="3">
           <i class="el-icon-menu"></i>
-          <span slot="title">顾客信息管理</span>
+          <span slot="title"><a href="#/admin/customer">顾客信息管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="4">
           <i class="el-icon-menu"></i>
-          <span slot="title">挂号预约管理</span>
+          <span slot="title"><a href="#/admin/appointment">挂号预约管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="5">
           <i class="el-icon-menu"></i>
-          <span slot="title">就诊记录管理</span>
+          <span slot="title"><a href="#/admin/his">就诊记录管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="6">
           <i class="el-icon-menu"></i>
-          <span slot="title">门诊费用管理</span>
+          <span slot="title"><a href="#/admin/fee">门诊费用管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="7">
           <i class="el-icon-menu"></i>
-          <span slot="title">余额查询</span>
+          <span slot="title"><a href="#/admin/balance">余额查询</a></span>
         </el-menu-item>
 
         <el-menu-item index="8">
           <i class="el-icon-menu"></i>
-          <span slot="title">药品管理</span>
+          <span slot="title"><a href="#/admin/medical">药品管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="9">
           <i class="el-icon-menu"></i>
-          <span slot="title">角色管理</span>
+          <span slot="title"><a href="#/admin/role">角色管理</a></span>
         </el-menu-item>
 
       </el-menu>
@@ -75,7 +75,8 @@
               <el-dropdown-item>删除</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>王小虎</span>
+          <span>{{user.account}}</span>
+          <span style="margin-left: 30px;cursor: pointer" @click="logout">退出</span>
         </el-header>
 
         <el-main>
@@ -89,12 +90,27 @@
 <script>
   export default {
     name: "Admin",
+    data(){
+      return{
+        user :{}
+      }
+    },
     methods: {
+      logout(){
+        window.localStorage.clear()
+        this.$router.push('/')
+      },
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+      }
+    },
+    mounted() {
+      let u = window.localStorage.getItem('user')
+      if(u){
+        this.user = JSON.stringify(u)
       }
     }
   }
@@ -109,5 +125,13 @@
 
   .el-aside {
     color: #333;
+  }
+  a{
+    text-decoration: none;
+    color: whitesmoke;
+  }
+
+  a:visited{
+    color: whitesmoke;
   }
 </style>

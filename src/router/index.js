@@ -14,6 +14,14 @@ import MyInformation from "../pages/personal/MyInformation";
 import Admin from "../components/Admin";
 import Dashboard from "../pages/admin/Dashboard";
 import MySpace from "../pages/personal/MySpace";
+import PetManager from "../pages/admin/PetManager";
+import EnpManager from "../pages/admin/EnpManager";
+import CustomerManager from "../pages/admin/CustomerManager";
+import HisManager from "../pages/admin/HisManager";
+import FeeManager from "../pages/admin/FeeManager";
+import BalanceManager from "../pages/admin/BalanceManager";
+import MedicalManager from "../pages/admin/MedicalManager";
+import RoleManager from "../pages/admin/RoleManager";
 
 Vue.use(Router)
 
@@ -87,10 +95,50 @@ export default new Router({
       redirect:'/admin/dashboard',
       children:[
         {
+          path: 'pet',
+          name: "pet",
+          component: PetManager,
+        },
+        {
           path: 'dashboard',
           name: "Dashboard",
           component: Dashboard,
-        }
+        },
+        {
+          path: 'enp',
+          name: "enp",
+          component: EnpManager,
+        },
+        {
+          path: 'customer',
+          name: "customer",
+          component: CustomerManager,
+        },
+        {
+          path: 'his',
+          name: "his",
+          component: HisManager,
+        },
+        {
+          path: 'fee',
+          name: "fee",
+          component: FeeManager,
+        },
+        {
+          path: 'balance',
+          name: "balance",
+          component: BalanceManager,
+        },
+        {
+          path: 'medical',
+          name: "medical",
+          component: MedicalManager,
+        },
+        {
+          path: 'role',
+          name: "role",
+          component: RoleManager,
+        },
       ]
     }
   ]
