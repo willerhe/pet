@@ -40,6 +40,7 @@
           <div>
             <p>个人信息管理</p>
             <div>
+              <p>邮箱</p><p>{{user.email}}</p>
               <p>账号</p><p>{{user.account}}</p>
               <p>密码</p><p>********</p>
               <p>地址</p><p>{{user.address}}</p>
