@@ -15,6 +15,10 @@ let api = {
   user: QuickParse('user', 'users'),
 }
 
+api.appointment.confirm = function (domain) {
+  return http.put('appointment/confirm', domain)
+}
+
 api.login = function (obj) {
   return http.post('/login', obj)
 }
@@ -32,7 +36,7 @@ function QuickParse(odd, plural) {
       return http.get(plural, {params: params})
     },
     delete: function (param) {
-      return http.delete(odd , {params:param})
+      return http.delete(odd, {params: param})
     },
     get: function (id) {
       return http.get(odd + '/' + id)

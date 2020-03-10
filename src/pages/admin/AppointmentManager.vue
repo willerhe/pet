@@ -64,7 +64,7 @@
       },
       confirmApit(a){
         a.status = 1
-        API.appointment.update(a).then(res=>{
+        API.appointment.confirm(a).then(res=>{
           this.$message.success('确认挂号成功')
         })
       },
