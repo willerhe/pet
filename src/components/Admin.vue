@@ -23,13 +23,10 @@
 
         <el-menu-item index="2">
           <i class="el-icon-menu"></i>
-          <span slot="title"><a href="#/admin/enp">员工信息管理</a></span>
+          <span slot="title"><a href="#/admin/enp">人员信息管理</a></span>
         </el-menu-item>
 
-        <el-menu-item index="3">
-          <i class="el-icon-menu"></i>
-          <span slot="title"><a href="#/admin/customer">顾客信息管理</a></span>
-        </el-menu-item>
+
 
         <el-menu-item index="4">
           <i class="el-icon-menu"></i>
