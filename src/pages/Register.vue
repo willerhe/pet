@@ -14,6 +14,12 @@
 
         <div style="display: flex;justify-content: center;flex-direction: column;">
           <el-input
+            placeholder="请输入昵称"
+            class="mt-10"
+            v-model="user.nickname"
+            prefix-icon="el-icon-search">
+          </el-input>
+          <el-input
             placeholder="请输入账号"
             class="mt-10"
             v-model="user.account"
@@ -34,6 +40,11 @@
           <el-input
             placeholder="请输入手机号" class="mt-10"
             v-model="user.phoneNumber"
+            prefix-icon="el-icon-search">
+          </el-input>
+          <el-input
+            placeholder="请输入所在邮箱" class="mt-10"
+            v-model="user.email"
             prefix-icon="el-icon-search">
           </el-input>
           <el-input
@@ -145,6 +156,7 @@
     methods:{
       doRegister(){
         console.log('当前的用户', this.user)
+        this.user.roles = 'vip'
         API.register(this.user).then(res=>{
           if(res.data.ok){
             this.$message.success('注册成功,请登录')

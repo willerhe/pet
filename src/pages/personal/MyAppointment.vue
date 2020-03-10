@@ -9,12 +9,12 @@
           border
           style="width: 100%">
           <el-table-column
-            prop="date"
+            prop="promiseTime"
             label="预约时间"
             width="180">
           </el-table-column>
           <el-table-column
-            prop="name"
+            prop="userName"
             label="主人姓名"
             width="180">
           </el-table-column>
@@ -23,7 +23,7 @@
             label="预约区域">
           </el-table-column>
           <el-table-column
-            prop="pet"
+            prop="petName"
             label="宠物名">
           </el-table-column>
           <el-table-column
@@ -33,6 +33,10 @@
           <el-table-column
             prop="status"
             label="预约状态">
+            <template slot-scope="scope">
+              <span v-if="scope.row.status === 0"> 未就医</span>
+              <span v-if="scope.row.status === 1"> 已就医</span>
+            </template>
           </el-table-column>
         </el-table>
       </div>
@@ -44,6 +48,7 @@
 <script>
   import Header from "../../components/Header";
   import Footer from "../../components/Footer";
+  import API from '@/api/api'
   export default {
     name: "MyAppointment",
     components: {Footer, Header},
@@ -58,6 +63,12 @@
           status: '已就医',
         }]
       }
+    },
+    mounted() {
+
+      API.appointment.list({userId:JSON.parse(window.localStorage.getItem('user')).id}).then(res=>{
+        this.tableData = res.data.data.data
+      })
     }
   }
 </script>

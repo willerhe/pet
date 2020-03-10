@@ -27,7 +27,7 @@
      <el-menu-item v-else>
 
        <el-button plain style="background-color: #0f1925;color: white" @click="mySpace">个人中心</el-button>
-       <el-button plain style="background-color: #0f1925;color: white" @click="toAdmin" v-if="">管理后台</el-button>
+       <el-button plain style="background-color: #0f1925;color: white" @click="toAdmin" v-if="isAdmin">管理后台</el-button>
 
        <el-button plain style="background-color: #0f1925;color: white" @click="logout">退出</el-button>
 

@@ -20,7 +20,7 @@
           </el-form-item>
 
           <el-form-item label="主人称呼">
-            <el-input v-model="form.userName"></el-input>
+            <el-input v-model="form.usreName"></el-input>
           </el-form-item>
 
 
@@ -34,9 +34,9 @@
 <!--            <el-input v-model="form.nickname"></el-input>-->
 <!--          </el-form-item>-->
 
-<!--          <el-form-item label="宠物年龄">-->
-<!--            <el-input v-model="form.nickname"></el-input>-->
-<!--          </el-form-item>-->
+          <el-form-item label="宠物年龄">
+            <el-input v-model="form.age" type="number"></el-input>
+          </el-form-item>
 
 
 
@@ -86,7 +86,15 @@
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        console.log('submit!',this.form);
+        var nowDate = this.form.promiseTime
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1)
+          : nowDate.getMonth() + 1;
+        var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate
+          .getDate();
+        var dateStr = year + "-" + month + "-" + day;
+        this.form.promiseTime = dateStr
         API.appointment.create(this.form).then(res=>{
           if(res.data.ok){
             this.$message.success('预约成功')
@@ -104,7 +112,7 @@
         this.isLogin = true
         let user = JSON.parse(window.localStorage.getItem('user'))
         this.form.phoneNumber = user.phoneNumber
-        this.form.userName = user.account
+        this.form.usreName = user.nickname
         this.form.userId = user.id
         console.log(this.form)
       }
