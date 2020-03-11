@@ -9,11 +9,12 @@
         background-color="#59524C"
         text-color="#fff"
         active-text-color="#ffd04b">
+        active-text-color="#ffd04b">
 
 
         <el-menu-item index="0">
           <i class="el-icon-menu"></i>
-          <span slot="title">主页面</span>
+          <span slot="title"><a href="#/">主页面</a></span>
         </el-menu-item>
 
         <el-menu-item index="1">

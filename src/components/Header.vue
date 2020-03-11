@@ -77,7 +77,6 @@
       if (user){
         if(user.indexOf('admin') > -1){
           this.isAdmin = true
-          debugger
         }
         this.isLogin = true
       }else{
