@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div style="padding: 20px">
 
-    <el-input placeholder="请输入宠物姓名" v-model="searchKey" class="input-with-select" style="margin-bottom: 20px">
+    <el-input placeholder="请输入宠物姓名" v-model="searchKey" class="input-with-select" style="margin-bottom: 20px;width: 400px">
       <el-button slot="append" type="primary" icon="el-icon-search" @click="loadData"></el-button>
     </el-input>
 
     <el-table
+      :row-class-name="tableRowClassName"
       :data="tableData"
       style="width: 100%">
       <el-table-column
@@ -44,6 +45,14 @@
   export default {
     name: "PetManager",
     methods: {
+      tableRowClassName({row, rowIndex}) {
+        if (rowIndex === 1) {
+          return 'warning-row';
+        } else if (rowIndex === 3) {
+          return 'success-row';
+        }
+        return '';
+      },
       handleClick(row) {
         console.log(row);
       },
@@ -100,5 +109,11 @@
 </script>
 
 <style scoped>
+  .el-table .warning-row {
+    background: oldlace;
+  }
 
+  .el-table .success-row {
+    background: #f0f9eb;
+  }
 </style>

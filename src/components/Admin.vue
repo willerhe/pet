@@ -9,7 +9,6 @@
         background-color="#59524C"
         text-color="#fff"
         active-text-color="#ffd04b">
-        active-text-color="#ffd04b">
 
 
         <el-menu-item index="0">

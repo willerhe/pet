@@ -1,8 +1,9 @@
 <template>
   <div>
+
+
     <el-table
       :data="tableData"
-      border
       style="width: 100%">
       <el-table-column
         prop="total"
@@ -33,7 +34,15 @@
         API.fee.list().then(res=>{
           this.tableData = res.data.data.data
         })
-      }
+      },
+      tableRowClassName({row, rowIndex}) {
+        if (rowIndex === 1) {
+          return 'warning-row';
+        } else if (rowIndex === 3) {
+          return 'success-row';
+        }
+        return '';
+      },
     },
     data() {
       return {
@@ -47,5 +56,11 @@
 </script>
 
 <style scoped>
+  .el-table .warning-row {
+    background: oldlace;
+  }
 
+  .el-table .success-row {
+    background: #f0f9eb;
+  }
 </style>

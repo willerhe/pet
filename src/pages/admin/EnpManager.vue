@@ -3,17 +3,17 @@
 
     <div style="display: flex;justify-content: space-between">
       <div style="display: flex;justify-content: start">
-        <el-select v-model="value" placeholder="请选择" style="width: 400px" :default-first-option="true">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
+<!--        <el-select v-model="value" placeholder="请选择" style="width: 400px" :default-first-option="true" @change="reload">-->
+<!--          <el-option-->
+<!--            v-for="item in options"-->
+<!--            :key="item.value"-->
+<!--            :label="item.label"-->
+<!--            :value="item.value">-->
+<!--          </el-option>-->
+<!--        </el-select>-->
 
-        <el-input placeholder="请输入用户名或者手机号" style="margin-left: 10px"></el-input>
-        <el-button type="primary" style="margin-left: 10px">搜索</el-button>
+        <el-input placeholder="请输入用户名或者手机号" style="margin-left: 10px" v-model="searchKey"></el-input>
+        <el-button type="primary" style="margin-left: 10px" @click="loadData">搜索</el-button>
       </div>
       <div>
         <el-button type="primary" @click="dialogVisible = true">添加</el-button>
@@ -99,7 +99,7 @@
   import API from '@/api/api'
 
   export default {
-    name: "PetManager",
+    name: "EnpManager",
     methods: {
       submitUser() {
         let roleStr = ''
@@ -156,14 +156,19 @@
         }
         return '';
       },
-      loadData() {
-        API.user.list().then(res => {
+      loadData(param) {
+        if (this.searchKey.length > 0){
+          param.nickname =this.searchKey
+          param.phoneNumber =this.searchKey
+        }
+        API.user.list(param).then(res => {
           this.tableData = res.data.data.data
         })
       }
     },
     data() {
       return {
+        searchKey:'',
         dialogVisible: false,
         tableData: [],
         roles: [],
