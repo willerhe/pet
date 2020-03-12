@@ -75,7 +75,7 @@
     mounted() {
       let user = window.localStorage.getItem('user')
       if (user){
-        if(user.indexOf('admin') > -1){
+        if(user.indexOf('admin') > -1 || user.indexOf('doctor') > -1){
           this.isAdmin = true
         }
         this.isLogin = true

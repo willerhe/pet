@@ -21,6 +21,7 @@
           </el-input>
           <el-input
             placeholder="请输入密码" class="mt-10"
+            show-password
             v-model="user.password"
             prefix-icon="el-icon-search">
           </el-input>

@@ -29,11 +29,13 @@
           <el-input
             placeholder="请输入密码" class="mt-10"
             v-model="user.password"
+            show-password
             prefix-icon="el-icon-search">
           </el-input>
 
           <el-input
             placeholder="请再次输入密码" class="mt-10"
+            show-password
             v-model="user.password1"
             prefix-icon="el-icon-search">
           </el-input>

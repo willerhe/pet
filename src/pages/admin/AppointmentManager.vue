@@ -39,7 +39,7 @@
         <template slot-scope="scope">
           <el-button type="text" size="small" v-if="scope.row.status === 0" @click="confirmApit(scope.row)">确认就医</el-button>
           <el-button type="text" size="small" v-else>已完成</el-button>
-          <el-button type="text" size="small" v-if="scope.row.status === 0" @click="deleteApit(scope.row)">删除</el-button>
+          <el-button type="text" size="small"  @click="deleteApit(scope.row)">删除</el-button>
         </template>
       </el-table-column>
 

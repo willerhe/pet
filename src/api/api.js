@@ -12,6 +12,7 @@ let api = {
   pet: QuickParse('pet', 'pets'),
   medicalRecord: QuickParse('medicalRecord', 'medicalRecords'),
   role: QuickParse('role', 'roles'),
+  medical: QuickParse('medical', 'medicals'),
   user: QuickParse('user', 'users'),
 }
 
