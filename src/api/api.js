@@ -13,7 +13,12 @@ let api = {
   medicalRecord: QuickParse('medicalRecord', 'medicalRecords'),
   role: QuickParse('role', 'roles'),
   medical: QuickParse('medical', 'medicals'),
+  prescription: QuickParse('prescription', 'prescriptions'),
   user: QuickParse('user', 'users'),
+}
+
+api.prescription.store = function(param){
+  return http.post('/prescription/store',param)
 }
 
 api.appointment.confirm = function (domain) {
@@ -40,7 +45,7 @@ function QuickParse(odd, plural) {
       return http.delete(odd, {params: param})
     },
     get: function (id) {
-      return http.get(odd + '/' + id)
+      return http.get(odd + '?id=' + id)
     },
     create: function (domain) {
       return http.post(odd, domain)

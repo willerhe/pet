@@ -38,10 +38,7 @@
           <span slot="title"><a href="#/admin/his">就诊记录管理</a></span>
         </el-menu-item>
 
-        <el-menu-item index="6">
-          <i class="el-icon-menu"></i>
-          <span slot="title"><a href="#/admin/fee">门诊费用管理</a></span>
-        </el-menu-item>
+
 
 <!--        <el-menu-item index="7">-->
 <!--          <i class="el-icon-menu"></i>-->
@@ -51,6 +48,11 @@
         <el-menu-item index="8">
           <i class="el-icon-menu"></i>
           <span slot="title"><a href="#/admin/medical">药品管理</a></span>
+        </el-menu-item>
+
+        <el-menu-item index="6">
+          <i class="el-icon-menu"></i>
+          <span slot="title"><a href="#/admin/fee">处方管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="9">

@@ -14,6 +14,10 @@
       border
       style="width: 100%;margin-top: 20px">
       <el-table-column
+        prop="no"
+        label="编号">
+      </el-table-column>
+      <el-table-column
         prop="name"
         label="药品名称">
       </el-table-column>

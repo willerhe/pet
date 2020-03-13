@@ -8,11 +8,11 @@
         prop="patientName"
         label="病人名称">
       </el-table-column>
-<!--      <el-table-column-->
-<!--        prop="doctorName"-->
-<!--        label="医生名称"-->
-<!--        width="120">-->
-<!--      </el-table-column>-->
+      <!--      <el-table-column-->
+      <!--        prop="doctorName"-->
+      <!--        label="医生名称"-->
+      <!--        width="120">-->
+      <!--      </el-table-column>-->
       <el-table-column
         prop="reason"
         label="病情描述">
@@ -26,7 +26,8 @@
         label="状态">
         <template slot-scope="scope">
           <el-tag type="success" v-if="scope.row.status === 1" size="mini">诊断完成</el-tag>
-          <el-tag type="warning" v-else size="mini">待诊断</el-tag>
+          <el-tag type="warning"  v-if="scope.row.status === 0"  size="mini">待诊断</el-tag>
+          <el-tag type="success"  v-if="scope.row.status === 2"  size="mini">已开药</el-tag>
         </template>
       </el-table-column>
       <el-table-column
@@ -40,12 +41,34 @@
         width="100">
         <template slot-scope="scope">
           <el-button type="text" size="small" v-if="scope.row.status === 0" @click="confirm(scope.row)">完成诊断</el-button>
-          <el-button type="text" size="small" v-else>开药</el-button>
+          <el-button type="text" size="small" v-if="scope.row.status === 1"  @click="takePrescription(scope.row)">开药</el-button>
+          <el-button type="text" size="small" v-if="scope.row.status === 2">查看药方</el-button>
           <el-button type="text" size="small" @click="deleteMedical(scope.row)">删除</el-button>
         </template>
       </el-table-column>
 
     </el-table>
+
+    <el-dialog
+      title="开具药方"
+      :visible.sync="dialogVisible1"
+      width="30%"
+      :before-close="handleClose1">
+
+      <el-input placeholder="请输入内容"></el-input>
+
+      <el-input
+        type="textarea"
+        :rows="4"
+        placeholder="输入备注">
+      </el-input>
+
+
+      <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible1 = false">取 消</el-button>
+    <el-button type="primary" @click="dialogVisible1 = false">确 定</el-button>
+  </span>
+    </el-dialog>
 
 
     <el-dialog
@@ -73,20 +96,23 @@
   export default {
     name: "MedicalManager",
     methods: {
-      deleteMedical(item){
-        API.medicalRecord.delete(item).then(()=>{
+      takePrescription(item) {
+        this.$router.push('/admin/prescription?id=' + item.id)
+      },
+      deleteMedical(item) {
+        API.medicalRecord.delete(item).then(() => {
           this.$message.success('删除成功')
           this.loadData()
         })
       },
-      confirm(item){
+      confirm(item) {
         this.selectedItem = item
         this.dialogVisible = true
       },
-      confirmMedicalRecord(){
+      confirmMedicalRecord() {
         this.selectedItem.status = 1
         this.selectedItem.result = this.result
-        API.medicalRecord.update(this.selectedItem).then(res=>{
+        API.medicalRecord.update(this.selectedItem).then(res => {
           this.$message.success('诊断成功')
           this.result = ''
           this.selectedItem = null
@@ -97,8 +123,8 @@
       handleClick(row) {
         console.log(row);
       },
-      loadData(){
-        API.medicalRecord.list().then(res=>{
+      loadData() {
+        API.medicalRecord.list().then(res => {
           this.tableData = res.data.data.data
         })
       },
@@ -107,15 +133,26 @@
           .then(_ => {
             done();
           })
-          .catch(_ => {});
+          .catch(_ => {
+          });
+      },
+      handleClose1(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {
+          });
       }
     },
     data() {
       return {
-        selectedItem:{},
-        result:'',
+        prescription: {},
+        selectedItem: {},
+        result: '',
         tableData: [],
-        dialogVisible: false
+        dialogVisible: false,
+        dialogVisible1: false,
       }
     },
     mounted() {
