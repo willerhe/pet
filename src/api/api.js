@@ -17,6 +17,10 @@ let api = {
   user: QuickParse('user', 'users'),
 }
 
+api.fee.getByPrescriptionId = function(id){
+  return http.get('/fee/medicals' + '?prescriptionId=' + id)
+}
+
 api.prescription.store = function(param){
   return http.post('/prescription/store',param)
 }

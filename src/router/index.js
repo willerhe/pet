@@ -24,6 +24,7 @@ import MedicalManager from "../pages/admin/MedicalManager";
 import RoleManager from "../pages/admin/RoleManager";
 import AppointmentManager from "../pages/admin/AppointmentManager";
 import TakePrescription from "../pages/admin/TakePrescription";
+import PrescriptionResult from "../pages/admin/PrescriptionResult";
 
 Vue.use(Router)
 
@@ -150,6 +151,11 @@ export default new Router({
           path: 'prescription',
           name: "prescription",
           component: TakePrescription,
+        },
+        {
+          path: 'prescription/result',
+          name: "prescriptionResult",
+          component: PrescriptionResult,
         },
       ]
     }

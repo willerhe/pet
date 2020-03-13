@@ -42,7 +42,7 @@
         <template slot-scope="scope">
           <el-button type="text" size="small" v-if="scope.row.status === 0" @click="confirm(scope.row)">完成诊断</el-button>
           <el-button type="text" size="small" v-if="scope.row.status === 1"  @click="takePrescription(scope.row)">开药</el-button>
-          <el-button type="text" size="small" v-if="scope.row.status === 2">查看药方</el-button>
+          <el-button type="text" size="small" v-if="scope.row.status === 2">诊断结果</el-button>
           <el-button type="text" size="small" @click="deleteMedical(scope.row)">删除</el-button>
         </template>
       </el-table-column>
