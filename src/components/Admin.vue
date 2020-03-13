@@ -17,24 +17,24 @@
         </el-menu-item>
 
         <el-menu-item index="1">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-soccer"></i>
           <span slot="title"><a href="#/admin/pet">宠物信息管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-user"></i>
           <span slot="title"><a href="#/admin/enp">人员信息管理</a></span>
         </el-menu-item>
 
 
 
         <el-menu-item index="4">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-paperclip"></i>
           <span slot="title"><a href="#/admin/appointment">挂号预约管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="5">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-tickets"></i>
           <span slot="title"><a href="#/admin/his">就诊记录管理</a></span>
         </el-menu-item>
 
@@ -46,17 +46,17 @@
 <!--        </el-menu-item>-->
 
         <el-menu-item index="8">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-suitcase"></i>
           <span slot="title"><a href="#/admin/medical">药品管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="6">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-news"></i>
           <span slot="title"><a href="#/admin/fee">处方管理</a></span>
         </el-menu-item>
 
         <el-menu-item index="9">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-connection"></i>
           <span slot="title"><a href="#/admin/role">角色列表</a></span>
         </el-menu-item>
 
