@@ -1,10 +1,33 @@
 <template>
   <div style="padding: 20px">
     <el-button @click="back">返回</el-button>
-    <p>病人名称：{{prescription.patientName}}</p>
-    <p>联系方式：{{prescription.phoneNumber}}</p>
-    <p>开具的药方：</p>
-    <p>{{fees}}</p>
+    <div style="display: flex;justify-content: start;flex-flow: wrap">
+      <p style="width: 33%">病人名称：{{prescription.patientName}}</p>
+      <p style="width: 33%">联系方式：{{prescription.phoneNumber}}</p>
+      <p style="width: 33%">总金额：￥{{prescription.total}}</p>
+      <p style="width: 33%">总数量：{{prescription.count}}</p>
+    </div>
+    <p style="width: 33%">开具的药方：</p>
+    <el-table
+      :data="fees"
+      style="width: 100%">
+      <el-table-column
+        prop="medicalName"
+        label="药品名称">
+      </el-table-column>
+      <el-table-column
+        prop="price"
+        label="单价">
+      </el-table-column>
+      <el-table-column
+        prop="method"
+        label="用法用量">
+      </el-table-column>
+      <el-table-column
+        prop="remark"
+        label="特殊医嘱">
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
