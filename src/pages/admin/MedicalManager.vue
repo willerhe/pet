@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 20px">
-
+    <h2>药品管理</h2>
     <div style="display: flex;justify-content: space-between">
       <div style="display: flex;justify-content: start">
         <el-input placeholder="请输入药品名称" v-model="searchKey"></el-input>

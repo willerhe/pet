@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div style="padding: 20px">
+    <h2>就诊记录管理</h2>
     <el-table
       :data="tableData"
       style="width: 100%">

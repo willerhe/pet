@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 20px">
-
+    <h2>宠物信息管理</h2>
     <el-input placeholder="请输入宠物姓名" v-model="searchKey" class="input-with-select" style="margin-bottom: 20px;width: 400px">
       <el-button slot="append" type="primary" icon="el-icon-search" @click="loadData"></el-button>
     </el-input>

@@ -1,21 +1,24 @@
 <template>
-  <div>
-    <div>
-      <el-input v-model="goods.name" placeholder="请输入商品名称"></el-input>
-      <el-input v-model="goods.price" placeholder="请输入价格" type="number"></el-input>
+  <div style="padding: 20px;display: flex;justify-content: center">
+    <div style="width: 60%">
+      <h2 style="color: green">添加商品</h2>
+      <div>
+        <el-input v-model="goods.name" placeholder="请输入商品名称" style="margin-top: 20px"></el-input>
+        <el-input v-model="goods.price" placeholder="请输入价格" type="number" style="margin-top: 20px"></el-input>
 
-      <el-upload
-        :action="uploadPath"
-        :limit="1"
-        :on-success="uploadSuccess"
-        list-type="picture-card">
-        <i slot="default" class="el-icon-plus"></i>
-        <div slot="file" slot-scope="{file}">
-          <img
-            class="el-upload-list__item-thumbnail"
-            :src="file.url" alt=""
-          >
-          <span class="el-upload-list__item-actions">
+        <el-upload
+          style="margin-top: 20px"
+          :action="uploadPath"
+          :limit="1"
+          :on-success="uploadSuccess"
+          list-type="picture-card">
+          <i slot="default" class="el-icon-plus"></i>
+          <div slot="file" slot-scope="{file}">
+            <img
+              class="el-upload-list__item-thumbnail"
+              :src="file.url" alt=""
+            >
+            <span class="el-upload-list__item-actions">
         <span
           class="el-upload-list__item-preview"
           @click="handlePictureCardPreview(file)"
@@ -37,15 +40,19 @@
           <i class="el-icon-delete"></i>
         </span>
       </span>
+          </div>
+        </el-upload>
+
+        <el-dialog :visible.sync="dialogVisible">
+          <img width="100%" :src="dialogImageUrl" alt="">
+        </el-dialog>
+
+        <div style="margin-top: 20px">
+          <el-button @click="back">返回</el-button>
+          <el-button @click="submit">提交</el-button>
         </div>
-      </el-upload>
 
-      <el-dialog :visible.sync="dialogVisible">
-        <img width="100%" :src="dialogImageUrl" alt="">
-      </el-dialog>
-
-      <el-button @click="back">返回</el-button>
-      <el-button @click="submit">提交</el-button>
+      </div>
     </div>
   </div>
 </template>

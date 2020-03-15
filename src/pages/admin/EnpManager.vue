@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 20px">
-
+    <h2>人员信息管理</h2>
     <div style="display: flex;justify-content: space-between">
       <div style="display: flex;justify-content: start">
 <!--        <el-select v-model="value" placeholder="请选择" style="width: 400px" :default-first-option="true" @change="reload">-->

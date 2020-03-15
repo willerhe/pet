@@ -13,15 +13,7 @@
             label="预约时间"
             width="180">
           </el-table-column>
-          <el-table-column
-            prop="userName"
-            label="主人姓名"
-            width="180">
-          </el-table-column>
-          <el-table-column
-            prop="address"
-            label="预约区域">
-          </el-table-column>
+
           <el-table-column
             prop="petName"
             label="宠物名">
@@ -49,6 +41,7 @@
   import Header from "../../components/Header";
   import Footer from "../../components/Footer";
   import API from '@/api/api'
+
   export default {
     name: "MyAppointment",
     components: {Footer, Header},

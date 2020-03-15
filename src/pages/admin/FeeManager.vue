@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div style="padding: 20px">
+    <h2>处方管理</h2>
     <el-table
       :data="tableData"
       :expand-change="loadSpec"

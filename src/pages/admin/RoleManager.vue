@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="padding: 20px">
+    <h2>角色列表</h2>
     <el-table
       :data="tableData"
       border
