@@ -41,13 +41,10 @@
           </div>
         </el-upload>
 
-
       </div>
 
-
-
-
       <el-input placeholder="文章标题" v-model="article.title" class="mt-10"></el-input>
+      <el-input placeholder="概述" v-model="article.sample" class="mt-10"></el-input>
 
 
       <div id="multipleContent" style="width: 100%;z-index: 1" class="mt-10"></div>
@@ -173,14 +170,24 @@
       publishArticle() {
         this.article.content = this.editor2.txt.html()
         this.article.tags = ''
+        if(this.kind === ''){
+          this.$message.warning('请选择文章种类')
+          return
+        }
+        // unionCode 起到分割标签和显示标签的两个功能 要和后台保持一致
+        let unionCode = ','
+        if(this.kind === '汪星人课堂'){
+          unionCode = '、'
+        }
+
         for (let t of this.tags) {
-          this.article.tags += (t + ',')
+          this.article.tags += (t + unionCode)
         }
         if (this.article.tags.length > 0) {
           this.article.tags = this.article.tags.substring(0, this.article.tags.length - 1)
         }
         console.log('publishArticle', this.article)
-        this.article.tags += ',' + this.kind
+        this.article.tags += unionCode + this.kind
         API.article.create(this.article).then(_ => {
           this.$message.success('发布成功')
           this.$router.go(-1)

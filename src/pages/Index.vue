@@ -31,14 +31,14 @@
           </ul>
 
         </div>
-        <div style="margin: 30px 15%">
+        <div style="margin: 30px 15%;display: flex;justify-content: start">
 
-          <div class="prase" @click="toArticleDetail">
-            <img src="@/assets/pt.jpg" alt="" style="width: 280px;height: 200px">
-            <a style="margin-top: 30px">给狗狗打疫苗是必须的吗？狗</a>
-            <p style="color: #5F5f5f;font-size: 12px;margin-top: 5px">2019-06-10</p>
+          <div class="prase" @click="toArticleDetail(ar)" v-for="ar in dogArticles" style="width: 25%">
+            <img :src="ar.coverUrl" alt="" style="width: 280px;height: 200px">
+            <a style="margin-top: 30px">{{ar.title}}</a>
+            <p style="color: #5F5f5f;font-size: 12px;margin-top: 5px">{{ar.publishTime}}</p>
             <p class="mt-10" style="color: #5F5f5f;font-size: 14px;margin-top: 5px">
-              狗狗是不是打了疫苗更健康啊，还有给狗狗打疫苗时需要注意些什么呢...</p>
+              {{ar.sample}}</p>
           </div>
 
         </div>
@@ -76,15 +76,14 @@
         </div>
 
 
+        <div style="margin: 30px 15%;display: flex;justify-content: start">
 
-        <div style="margin: 30px 15%">
-
-          <div class="prase" @click="toArticleDetail">
-            <img src="@/assets/pt2.jpg" alt="" style="width: 280px;height: 200px">
-            <a style="margin-top: 30px">接种疫苗前、后都需要注意</a>
-            <p style="color: #5F5f5f;font-size: 12px;margin-top: 5px">2019-06-10</p>
+          <div class="prase" @click="toArticleDetail(ar)" v-for="ar in catArticles" style="width: 25%">
+            <img :src="ar.coverUrl" alt="" style="width: 280px;height: 200px">
+            <a style="margin-top: 30px">{{ar.title}}</a>
+            <p style="color: #5F5f5f;font-size: 12px;margin-top: 5px">{{ar.publishTime}}</p>
             <p class="mt-10" style="color: #5F5f5f;font-size: 14px;margin-top: 5px">
-              宠物要在精神状态良好，排便饮食正常，不打喷嚏，不流鼻涕，体温正常...</p>
+              {{ar.sample}}</p>
           </div>
 
         </div>
@@ -99,15 +98,40 @@
 <script>
   import Header from "../components/Header";
   import Footer from "../components/Footer";
+  import API from '@/api/api'
 
   export default {
     name: "Index",
     components: {Footer, Header},
-    methods: {
-      toArticleDetail() {
-        console.log('进入文章详情页面')
-        this.$router.push('/article?articleId=' + '10001')
+    data() {
+      return {
+        dogArticles: [],
+        catArticles: [],
+        dogTag:'疫苗',
+        catTag:'疫苗'
       }
+    },
+    methods: {
+      toArticleDetail(ar) {
+        console.log('进入文章详情页面')
+        this.$router.push('/article?articleId=' + ar.id)
+      },
+      loadDogArticles() {
+        API.article.list({kind: '汪星人课堂',tags:this.dogTag}).then(res => {
+          this.dogArticles = res.data.data.data
+          console.log('汪星人课堂',this.dogArticles)
+        })
+      },
+      loadCatArticles() {
+        API.article.list({kind: '喵星人课堂',tags:this.catTag}).then(res => {
+          this.catArticles = res.data.data.data
+          console.log('喵星人课堂',this.catArticles)
+        })
+      }
+    },
+    mounted() {
+      this.loadDogArticles()
+      this.loadCatArticles()
     }
   }
 </script>
@@ -119,6 +143,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 100px;
+
   }
 
   .jibing-list1 {
@@ -130,6 +155,7 @@
     display: block;
     float: left;
     padding-left: 33px;
+    cursor: pointer;
   }
 
   .text {
