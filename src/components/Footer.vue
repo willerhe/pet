@@ -3,24 +3,22 @@
     <div class="s-footer">
       <div class="sub-fo">
         <p>企业动态</p>
-        <a href="javascript:;">品牌介绍</a>
-        <a href="javascript:;">新闻资讯</a>
+        <a href="#/about">品牌介绍</a>
+        <a href="#/store">宠物商城</a>
       </div>
       <div>
         <p>关于我们</p>
-        <a href="javascript:;">品牌故事</a>
-        <a href="javascript:;">医院点滴</a>
-        <a href="javascript:;">公益之路</a>
+        <a href="#/about">品牌故事</a>
       </div>
       <div>
         <p>联系我们</p>
-        <a href="javascript:;">企业总部</a>
-        <a href="javascript:;">门店展示</a>
+        <a href="#/about">企业总部</a>
+        <a href="#/">门店展示</a>
       </div>
       <div>
         <p>站点相关信息</p>
-        <a href="javascript:;">核心业务</a>
-        <a href="javascript:;">养宠俱乐部</a>
+        <a href="#/appointment">核心业务</a>
+        <a href="#/">养宠俱乐部</a>
       </div>
       <div>
         <i class="el-icon-phone-outline" style="font-size: 60px"></i>
@@ -31,16 +29,16 @@
         <div>
           <img src="@/assets/wechat.png" alt="" class="small-icon">
           <span>
-            微信
+            微信：XXXXXX
           </span>
         </div>
         <div>
           <img src="@/assets/weibo.png" alt="" class="small-icon">
-          <span>微博</span>
+          <span>微博:XXXXX</span>
         </div>
         <div>
           <img src="@/assets/qq.png" alt="" class="small-icon">
-          <span>在线咨询</span>
+          <span>在线咨询:XXXXX</span>
         </div>
 
       </div>
