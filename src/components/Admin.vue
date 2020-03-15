@@ -21,6 +21,11 @@
           <span slot="title"><a href="#/admin/pet">宠物信息管理</a></span>
         </el-menu-item>
 
+        <el-menu-item index="-1">
+          <i class="el-icon-soccer"></i>
+          <span slot="title"><a href="#/admin/article">文章管理</a></span>
+        </el-menu-item>
+
         <el-menu-item index="2">
           <i class="el-icon-user"></i>
           <span slot="title"><a href="#/admin/enp">人员信息管理</a></span>

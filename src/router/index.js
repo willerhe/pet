@@ -27,6 +27,9 @@ import TakePrescription from "../pages/admin/TakePrescription";
 import PrescriptionResult from "../pages/admin/PrescriptionResult";
 import GoodsManager from "../pages/admin/GoodsManager";
 import GoodsAdd from "../pages/admin/GoodsAdd";
+import ArticleManager from "../pages/admin/ArticleManager";
+import ArticleAdd from "../pages/admin/ArticleAdd";
+import ArticleDynamic from "../pages/ArticleDynamic";
 
 Vue.use(Router)
 
@@ -66,7 +69,7 @@ export default new Router({
     {
       path: '/article',
       name: "Article",
-      component: Article
+      component: ArticleDynamic
     },
     {
       path: '/login',
@@ -168,6 +171,16 @@ export default new Router({
           path: 'goods/add',
           name: "goods/add",
           component: GoodsAdd,
+        },
+        {
+          path: 'article',
+          name: "article",
+          component: ArticleManager,
+        },
+        {
+          path: 'article/add',
+          name: "article.add",
+          component: ArticleAdd,
         },
       ]
     }

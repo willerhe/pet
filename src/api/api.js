@@ -14,15 +14,19 @@ let api = {
   role: QuickParse('role', 'roles'),
   medical: QuickParse('medical', 'medicals'),
   prescription: QuickParse('prescription', 'prescriptions'),
+  article: QuickParse('article', 'articles'),
   user: QuickParse('user', 'users'),
 }
 
-api.fee.getByPrescriptionId = function(id){
+api.fee.getByPrescriptionId = function (id) {
   return http.get('/fee/medicals' + '?prescriptionId=' + id)
 }
+api.article.getByArticleId = function (id) {
+  return http.get('/article/' + '?id=' + id)
+}
 
-api.prescription.store = function(param){
-  return http.post('/prescription/store',param)
+api.prescription.store = function (param) {
+  return http.post('/prescription/store', param)
 }
 
 api.appointment.confirm = function (domain) {
