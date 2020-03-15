@@ -4,10 +4,11 @@
     <div class="content" style="background-color: #EFEFEF;display: flex;justify-content: center">
       <div style="width: 50%;background-color: white;margin: 50px;border-radius: 3px">
         <p class="art_tit">{{article.title}}</p>
-        <div style="display: flex;justify-content: space-between">
+        <div style="display: flex;justify-content: space-between;flex-wrap: wrap">
           <p style="padding: 20px;font-size: 14px;color: #ccc" align="right">发布日期：{{article.publishTime}}</p>
           <p style="padding: 20px;font-size: 14px;color: #ccc" align="right">文章标签：{{article.tags}}</p>
         </div>
+        <p class="art_tutor" style="padding-left: 40px;padding-right: 40px;">概述：{{article.sample}}</p>
         <div style="display: flex;justify-content: center">
           <img :src="article.coverUrl" alt="" style="width: 60%">
         </div>

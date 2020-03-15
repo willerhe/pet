@@ -82,7 +82,7 @@
   import API from '@/api/api'
 
   export default {
-    name: "GoodsManager",
+    name: "ArticleManager",
     methods: {
       scanArticle(item) {
         // todo 跳转到指定页面
@@ -133,7 +133,7 @@
       },
       deleteArticle(user) {
         console.log('删除这个用户')
-        API.goods.delete(user).then(res => {
+        API.article.delete(user).then(res => {
           this.$message.success('删除成功')
           this.loadData()
         })

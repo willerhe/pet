@@ -73,7 +73,7 @@
       </el-menu>
     </div>
 
-    <div style="width: 85%;max-height: 100vh;min-height: 100vh">
+    <div style="width: 85%;max-height: 100vh;min-height: 100vh;overflow: scroll">
       <el-container>
         <el-header style="text-align: right; font-size: 12px">
           <el-dropdown>
