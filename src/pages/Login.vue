@@ -1,6 +1,6 @@
 <template>
   <div class="page1">
-    <Header />
+    <Header/>
     <LeaveWord style="z-index: 100000"/>
     <div class="content" style="min-height: 100vh;display: flex;justify-content: center;align-items: center">
       <video class="banner-video" autoplay loop muted poster="">
@@ -126,19 +126,34 @@
     components: {LeaveWord, Footer, Header},
     data() {
       return {
-        isLogin:false,
+        isLogin: false,
         numbers: [1300, 15000, 50, 600, 15, 1200],
         user: {}
       }
     },
     methods: {
       toLogin() {
+        if (this.user.account === '') {
+          this.$message.warning('请输入账号')
+          return
+        }
+        if (this.user.password === '') {
+          this.$message.warning('请输入密码')
+        }
+        let _this = this
         API.login(this.user).then(res => {
-          if (res.data.ok) {
-            this.$message.success('登录成功')
-            window.localStorage.setItem('user', JSON.stringify(res.data.data.data))
-            location.reload();
+          if (res.data.data.reason) {
+            console.log(res.data.data.reason)
+            _this.$message.warning(res.data.data.reason)
+
+          }else{
+            if (res.data.ok) {
+              _this.$message.success('登录成功')
+              window.localStorage.setItem('user', JSON.stringify(res.data.data.data))
+              location.reload();
+            }
           }
+
         })
       },
       toRegister() {
@@ -148,9 +163,9 @@
     mounted() {
 
       let user = window.localStorage.getItem('user')
-      if (user){
+      if (user) {
         this.isLogin = true
-      }else{
+      } else {
         this.isLogin = false
       }
     }
