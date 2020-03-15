@@ -55,6 +55,11 @@
           <span slot="title"><a href="#/admin/fee">处方管理</a></span>
         </el-menu-item>
 
+        <el-menu-item index="7">
+          <i class="el-icon-news"></i>
+          <span slot="title"><a href="#/admin/goods">商品管理</a></span>
+        </el-menu-item>
+
         <el-menu-item index="9">
           <i class="el-icon-connection"></i>
           <span slot="title"><a href="#/admin/role">角色列表</a></span>

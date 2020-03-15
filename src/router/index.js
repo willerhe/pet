@@ -25,6 +25,8 @@ import RoleManager from "../pages/admin/RoleManager";
 import AppointmentManager from "../pages/admin/AppointmentManager";
 import TakePrescription from "../pages/admin/TakePrescription";
 import PrescriptionResult from "../pages/admin/PrescriptionResult";
+import GoodsManager from "../pages/admin/GoodsManager";
+import GoodsAdd from "../pages/admin/GoodsAdd";
 
 Vue.use(Router)
 
@@ -156,6 +158,16 @@ export default new Router({
           path: 'prescription/result',
           name: "prescriptionResult",
           component: PrescriptionResult,
+        },
+        {
+          path: 'goods',
+          name: "goods",
+          component: GoodsManager,
+        },
+        {
+          path: 'goods/add',
+          name: "goods/add",
+          component: GoodsAdd,
         },
       ]
     }
